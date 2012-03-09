@@ -13,8 +13,8 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class MaxCountArraySearcherTest {
-    private int expectedValue;
-    private int expectedCount;
+    private int value;
+    private int count;
     private int[] src;
     private MaxCountArraySearcher searcher;
 
@@ -32,8 +32,8 @@ public class MaxCountArraySearcherTest {
     }
 
     public MaxCountArraySearcherTest(int expectedValue, int expectedCount, int[] src) {
-        this.expectedValue = expectedValue;
-        this.expectedCount = expectedCount;
+        this.value = expectedValue;
+        this.count = expectedCount;
         this.src = src;
     }
 
@@ -44,12 +44,12 @@ public class MaxCountArraySearcherTest {
     
     @Test
     public void itShouldFindMaxCount() {
-        assertEquals(expectedCount, searcher.search().getCount());
+        assertEquals(count, searcher.search().getCount());
     }
 
     @Test
     public void itShouldFindTheFirstValueWithTheMaxCount() {
-        assertEquals(expectedValue, searcher.search().getValue());
+        assertEquals(value, searcher.search().getValue());
     }
 
 }
